@@ -94,12 +94,7 @@ class ZF2 extends Client
         $zendResponse = $this->application->getResponse();
 
         $this->zendRequest = $zendRequest;
-
-        $exception = $this->application->getMvcEvent()->getParam('exception');
-        if ($exception instanceof \Exception) {
-            throw $exception;
-        }
-
+        
         $response = new Response(
             $zendResponse->getBody(),
             $zendResponse->getStatusCode(),
